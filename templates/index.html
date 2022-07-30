@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- head definitions go here -->
-    </head>
-    <body>
-        <!-- the content goes here -->
-        <p>EmergenSeize</p>
-        <p id='demo'>{{ variable }} </p> 
-    </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css"/>
+  <title>EmergenSeiz</title>
+</head>
+
+<body class="flex-column min-100-vh">
+  <header class="hero">
+    <h1 class="app-title"><i class="fab fa-github"></i>EmergenSeiz</h1>
+    <p>Keep track of your seizures. Know when they'll happen before they happen.</p>
+    <p id='demo'>{{ variable }} </p> 
+  </header>
+
+  <main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By Date</h3>
+        <form id="user-form" class="card-body">
+          <label class="form-label" for="username">Date</label>
+          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn">Get Date</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By <Title></Title></h3>
+        <form id="user-form" class="card-body">
+          <label class="form-label" for="username">Title Name</label>
+          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn">Get Title Name</button>
+        </form>
+      </div>
+
+    <div class="col-12 col-md-8">
+      <h2 class="subtitle">Showing Past Seizures: <span id="repo-search-term"></span></h2>
+      <div id="repos-container" class="list-group">
+
+      </div>
+    </div>
+  </main>
+
+  <script src="./assets/js/homepage.js"></script>
+</body>
+
+>>>>>>> 21a9c2bf164de076beac7e04708c2ff458312025
 </html>
