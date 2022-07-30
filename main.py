@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib as plt
 import seaborn as sns
+import random
 
 from sklearn.preprocessing  import StandardScaler
 from sklearn.model_selection import train_test_split
@@ -40,17 +41,25 @@ def predict(model, X_test):
 
 X_train, X_test, y_train, y_test = prep_data('Epileptic Seizure Recognition.csv')
 model = train_model(X_train, y_train)
+
 #X_test_transform = transform(X_test.iloc[0])
 #pred = predict(model, X_test_transform)
 
-@app.route('/')
+@app.route('/', methods = ['GET', 'POST'])
 def index():
-	X_test_transform = transform(X_test.iloc[0])
-	pred = predict(model, X_test_transform)
-	if pred == 1:
-		label = "Seizure Predicted"
-	else:
-		label = "No Seizure Predicted"
+	if request.method == 'POST':
+		if request.form.get('predict') == 'Get New Prediction':
+			n = random.randint(0,len(X_test))
+			X_test_transform = transform(X_test.iloc[n])
+			pred = predict(model, X_test_transform)
+			if pred == 1:
+				label = "Seizure Predicted"
+			else:
+				label = "No Seizure Predicted"
+			n += 1
+
+	elif request.method == 'GET':
+		return render_template('index.html')
 
 	return render_template('index.html', variable = label)
 

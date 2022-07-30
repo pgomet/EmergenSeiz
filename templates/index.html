@@ -15,10 +15,19 @@
   <header class="hero">
     <h1 class="app-title"><i class="fab fa-github"></i>EmergenSeiz</h1>
     <p>Keep track of your seizures. Know when they'll happen before they happen.</p>
-    <p id='demo'>{{ variable }} </p> 
+    
   </header>
 
-  <main class="flex-row justify-space-between">
+  <main>
+    <p id='demo'>{{ variable }} </p> 
+
+    <form method="post" action="/">
+      <input type = "submit" value = "Get New Prediction" name = "predict"/>
+    </form>
+
+  </main>
+
+  <!--<main class="flex-row justify-space-between">
     <div class="col-12 col-md-4">
       <div class="card">
         <h3 class="card-header text-uppercase">Search By Date</h3>
@@ -44,10 +53,8 @@
 
       </div>
     </div>
-  </main>
+  </main>-->
 
   <script src="./assets/js/homepage.js"></script>
 </body>
-
->>>>>>> 21a9c2bf164de076beac7e04708c2ff458312025
 </html>
