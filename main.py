@@ -13,7 +13,21 @@ from flask import request
 from flask import jsonify
 from flask import Flask, render_template
 
+import os
+from dotenv import load_dotenv
+from twilio.rest import Client
+
+# load environment variables 
+load_dotenv()
+
+# initialize flask app
 app = Flask(__name__)
+
+# connect to Twilio API
+accountSid = os.getenv('TWILIO_ACCOUNT_SID')
+authToken = os.getenv('TWILIO_AUTH_TOKEN')
+
+client = Client(accountSid, authToken)
 
 
 def prep_data(csv_path):
@@ -54,6 +68,12 @@ def index():
 			pred = predict(model, X_test_transform)
 			if pred == 1:
 				label = "Seizure Predicted"
+				message = client.messages \
+                    .create(
+                        body='High Risk of Seizure Predicted',
+                        from_= '+13133074053',
+                        to= '+18608997108'
+                    )
 			else:
 				label = "No Seizure Predicted"
 			return render_template('index.html', variable = label)
