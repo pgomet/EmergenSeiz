@@ -48,7 +48,7 @@ model = train_model(X_train, y_train)
 @app.route('/', methods = ['GET', 'POST'])
 def index():
 	if request.method == 'POST':
-		if request.form.get('predict') == 'Get New Prediction':
+		if request.form.get('predict') == 'Send New Data and Run Prediction':
 			n = random.randint(0,len(X_test))
 			X_test_transform = transform(X_test.iloc[n])
 			pred = predict(model, X_test_transform)
@@ -56,12 +56,15 @@ def index():
 				label = "Seizure Predicted"
 			else:
 				label = "No Seizure Predicted"
+			return render_template('index.html', variable = label)
 			n += 1
 
 	elif request.method == 'GET':
 		return render_template('index.html')
 
-	return render_template('index.html', variable = label)
+	return render_template('index.html')
+
+	
 
 #@app.route('/', methods = ['POST'])
 #def post():
