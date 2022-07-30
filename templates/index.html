@@ -14,47 +14,33 @@
 <body class="flex-column min-100-vh">
   <header class="hero">
     <h1 class="app-title"><i class="fab fa-github"></i>EmergenSeiz</h1>
-    <p>Keep track of your seizures. Know when they'll happen before they happen.</p>
+    <p>Predict when you're at risk of a seizure and receive text notifications.</p>
+    <p>Built by Pina Gomet and Kevin Le with &#9825;</p>
     
   </header>
 
-  <main>
-    <p id='demo'>{{ variable }} </p> 
-
-    <form method="post" action="/">
-      <input type = "submit" value = "Send New Data and Run Prediction" name = "predict"/>
-    </form>
-
-  </main>
-
-  <!--<main class="flex-row justify-space-between">
+  <main class="flex-row justify-space-between">
     <div class="col-12 col-md-4">
       <div class="card">
-        <h3 class="card-header text-uppercase">Search By Date</h3>
-        <form id="user-form" class="card-body">
-          <label class="form-label" for="username">Date</label>
-          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn">Get Date</button>
+        <h3 class="card-header text-uppercase">Send New Data & Run Prediction</h3>
+        <p id='demo'>{{ variable }} </p> 
+        <form id="user-form" class="card-body" method="post" action="/">
+          <button type="submit" class="btn" value = "Send New Data and Run Prediction" name = "predict">Run Prediction</button>
         </form>
       </div>
 
       <div class="card">
-        <h3 class="card-header text-uppercase">Search By <Title></Title></h3>
+        <h3 class="card-header text-uppercase">Add in Phone Number<Title></Title></h3>
         <form id="user-form" class="card-body">
-          <label class="form-label" for="username">Title Name</label>
+          <label class="form-label" for="username">Notify You & Your Contacts When High Risk of Seizure is Predicted</label>
           <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn">Get Title Name</button>
+          <button type="submit" class="btn">Add Number</button>
         </form>
       </div>
-
-    <div class="col-12 col-md-8">
-      <h2 class="subtitle">Showing Past Seizures: <span id="repo-search-term"></span></h2>
-      <div id="repos-container" class="list-group">
 
       </div>
     </div>
-  </main>-->
+  </main>
 
-  <script src="./assets/js/homepage.js"></script>
 </body>
 </html>

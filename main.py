@@ -67,13 +67,18 @@ def index():
 			X_test_transform = transform(X_test.iloc[n])
 			pred = predict(model, X_test_transform)
 			if pred == 1:
-				label = "Seizure Predicted"
-				message = client.messages \
-                    .create(
-                        body='High Risk of Seizure Predicted',
-                        from_= '+13133074053',
-                        to= '+18608997108'
-                    )
+				
+				label = "High Risk of Seizure Predicted for Winnie"
+
+				numbers_to_message = ['+18608997108', '+17817754603']
+
+				for number in numbers_to_message:
+				    message = client.messages \
+                        .create(
+                            body='High Risk of Seizure Predicted',
+                            from_= '+13133074053',
+                            to = number
+                        )
 			else:
 				label = "No Seizure Predicted"
 			return render_template('index.html', variable = label)
