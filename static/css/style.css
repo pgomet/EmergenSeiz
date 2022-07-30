@@ -20,7 +20,15 @@
     line-height: 1.5;
     font-size: 16px;
   }
-  
+
+  footer {
+      margin: 0 0 20px 0; 
+      color: var(--dark);
+      text-align: center;
+      padding: 2.5%;
+      border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
+  }
+
   h1,
   h2,
   h3,
@@ -40,6 +48,10 @@
   
   p {
     font-size: 1.2rem;
+  }
+
+  .demo {
+    text-align: center;
   }
   
    .btn {
@@ -178,6 +190,7 @@
   .form-label {
     font-size: 1.1rem;
     margin: 0 0 0 5px;
+    text-align: center;
   }
   
   .form-input {

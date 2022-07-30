@@ -20,10 +20,10 @@
   </header>
 
   <main class="flex-row justify-space-between">
-    <div class="col-12 col-md-4">
+    <div class="col-md-4" style="float:none;margin:auto;">
       <div class="card">
         <h3 class="card-header text-uppercase">Send New Data & Run Prediction</h3>
-        <p id='demo'>{{ variable }} </p> 
+        <p class="demo">{{ variable }} </p> 
         <form id="user-form" class="card-body" method="post" action="/">
           <button type="submit" class="btn" value = "Send New Data and Run Prediction" name = "predict">Run Prediction</button>
         </form>
@@ -42,5 +42,12 @@
     </div>
   </main>
 
+  <footer>
+    <div class="footer">
+      <p>
+        <i>This was created for the NatHacks 2022 Hackathon. The theme was brain-computer interfaces (BCI). We did not have BCI hardware, which is why we have a "Run Prediction" button that grabs data from an open source EEG dataset to mimic having an actual sensor. <a href="https://github.com/pgomet/EmergenSeiz">GitHub Repo Here!</a></i>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
